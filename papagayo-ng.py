@@ -29,12 +29,13 @@
 ##except ImportError:
 ##    warnings.warn("You either don't have wx installed or you are using wxphoenix. Please test this with wx Version 2.8 before reporting errors!")
 
-
-import wx
-#   wx.App
-#   wx.ID_ANY
-#   wx.PYAPP_ASSERT_SUPPRESS
-#   wx.InitAllImageHandlers()
+# REFACTOR to \\gui\lipsync_app_class.py
+##import wx
+###   wx.App
+###   wx.ID_ANY
+###   wx.PYAPP_ASSERT_SUPPRESS
+###   wx.InitAllImageHandlers()
+# END OF REFACTOR
 
 import os
 #   os.path.abspath()
@@ -63,22 +64,26 @@ import sys
 # ### TODO : strip _() message functions - this is a job for grep x-d:-)
 
 
-from LipsyncFrame import LipsyncFrame
+from gui.lipsync_app_class import LipsyncApp
 
-
-class LipsyncApp(wx.App):
-    def OnInit(self):
-        wx.InitAllImageHandlers()
-        try:
-            self.SetAssertMode(wx.PYAPP_ASSERT_SUPPRESS)
-        except AttributeError:
-            self.SetAssertMode(wx.APP_ASSERT_SUPPRESS)
-        self.mainFrame = LipsyncFrame(None, wx.ID_ANY, "")
-        self.SetTopWindow(self.mainFrame)
-        self.mainFrame.Show()
-        return 1
-
-# end of class LipsyncApp
+# REFACTOR the app class to a separate script -> \\gui\lipsync_app_class.py
+##
+##from LipsyncFrame import LipsyncFrame
+##
+##class LipsyncApp(wx.App):
+##    def OnInit(self):
+##        wx.InitAllImageHandlers()
+##        try:
+##            self.SetAssertMode(wx.PYAPP_ASSERT_SUPPRESS)
+##        except AttributeError:
+##            self.SetAssertMode(wx.APP_ASSERT_SUPPRESS)
+##        self.mainFrame = LipsyncFrame(None, wx.ID_ANY, "")
+##        self.SetTopWindow(self.mainFrame)
+##        self.mainFrame.Show()
+##        return 1
+##
+### end of class LipsyncApp
+# END OF REFACTOR
 
 
 if __name__ == "__main__":
