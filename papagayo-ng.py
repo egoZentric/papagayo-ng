@@ -38,10 +38,11 @@
 # END OF REFACTOR
 
 import os
-#   os.path.abspath()
+#   os.path.abspath() - normalize and absolutize given file name.and path.
 
 import sys
-#   sys.argv
+#   sys.exit() - terminate script execution with optional message.
+#   sys.argv[] - list of command line arguments passed. [0] is executed name.
 
 
 
@@ -88,7 +89,6 @@ from gui.lipsync_app_class import LipsyncApp
 
 if __name__ == "__main__":
 
-
 ##    # UNUSED module gettext ####################################################
 ##    # Setup for GNU (I18N) and (L10N)
 ##    try:
@@ -97,9 +97,29 @@ if __name__ == "__main__":
 ##        gettext.install("papagayo-ng")
 ##    # END OF UNUSED BLOCK ######################################################
 
+
+    # Create an instance of the application.
+    ### TODO verify passed zero necesary ???
     papagayo = LipsyncApp(0)
+    if not papagayo:
+        gracefully = "FAIL: Could not create application."
+        sys.exit(gracefully)
+
+    # Propergate the object reference to this application class instance.
+    ### TODO use reference by self, super, or argument ???
     papagayo.mainFrame.TheApp = papagayo
     papagayo.mainFrame.waveformView.TheApp = papagayo
+
+    # Test and handle any command line parameters.
     if len(sys.argv) > 1:
-        papagayo.mainFrame.Open(os.path.abspath(sys.argv[1]))
+        # expecting audio|text|project|lip(s)|breakdowns|...??? file 
+        ### TODO - what kinds of files are accepted ???
+        ### TODO - how are batch files handled ???
+        file_spec = os.path.abspath(sys.argv[1])
+        ### TODO test file existance and readbility
+        papagayo.mainFrame.Open(file_spec)
+
+    # Listen for events and handle them ... foreverandever.
     papagayo.MainLoop()
+
+# END OF FILE #################################################################
