@@ -1,0 +1,16 @@
+suspects
+
+
+LipsyncApp()
+    self reference propergation to .mainFrame.TheApp
+    self reference propergation to .mainFrame.waveformView.TheApp
+    Maybe better by supper or by argument ?
+
+
+_()
+    gettext method for 1810ng have been remarked and stripped out. They stem 
+    from use of wxGlade in the UI design which auto generated code in UI 
+    scripts.
+    Scope : potentially everything wxGlade produced
+    Maybe some got overlooked.
+ 
