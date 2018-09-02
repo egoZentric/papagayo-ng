@@ -99,8 +99,8 @@ if __name__ == "__main__":
 
 
     # Create an instance of the application.
-    ### TODO verify passed zero necesary ???
-    papagayo = LipsyncApp(0)
+    ##papagayo = LipsyncApp(0)  ### TODO verify passed zero necesary ???
+    papagayo = LipsyncApp()
     if not papagayo:
         gracefully = "FAIL: Could not create application."
         sys.exit(gracefully)
@@ -111,6 +111,7 @@ if __name__ == "__main__":
     papagayo.mainFrame.waveformView.TheApp = papagayo
 
     # Test and handle any command line parameters.
+    ### TODO - refactor argv handling into the app class.init
     if len(sys.argv) > 1:
         # expecting audio|text|project|lip(s)|breakdowns|...??? file 
         ### TODO - what kinds of files are accepted ???
