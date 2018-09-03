@@ -55,7 +55,11 @@ readme.txt - this file
 gpl.txt     - the user license for Papagayo-NG
 
 papagayo-ng.py              - the main program file
-AboutBox.py                 - about box
+gui/lipsync_app_class.py    - the application handler
+
+gui/LipsyncFrame.py         - DEPRECIATED the main Papagayo-NG window
+gui/lipsync_frame_class.py  - REFACTORED the main Papagayo-NG window
+
 
 phonemes.py                 - a list if phoneme sets available in Papagayo-NG
 phonemes_preston_blair.py   - Preston Blair phoneme set (default)
@@ -63,11 +67,10 @@ phonemes_fleming_dobbs.py   - Fleming & Dobbs phoneme set
 breakdowns/*.py             - code to break down words using language specific pronunciations
 PronunciationDialog.py      - a dialog to provide manual phoneme breakdown
 
+AboutBox.py                 - about box
 LipsyncDoc.py               - the document structure, including voices, phoneme breakdown, etc.
-LipsyncFrame.py             - the main Papagayo-NG window
 WaveformView.py             - view handler for the audio waveform in the main window
 MouthView.py                - view handler for the mouth in the main window
-
 
 resources/lipsync.wxg       - a wxGlade file defining the user interface layout for Papagayo-NG
 resources/papagayo-ng.ico   - Windows icons

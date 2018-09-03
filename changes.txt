@@ -1,5 +1,12 @@
 History
 
+
+\\gui\lipsync_frame_class.py
+LipsyncFrame.py
+    File relocatation. \\LipsyncFrame.py - > \\gui\LipsyncFrame.py
+    1 import from lipsync_app_class.py fixed by relay import.
+    frame_class relocated from LipsyncFrame.py
+
 \\gui\lipsync_app_class.py
     app_class relocatated from main papagayo-ng.py
 

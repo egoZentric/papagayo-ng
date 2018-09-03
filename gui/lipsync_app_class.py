@@ -17,8 +17,10 @@ import wx
 ###   wx.PYAPP_ASSERT_SUPPRESS ### TODO - wx.PYAPP... is mistake  should be wx.APP...
 # END CUT ---------------------------------------------------------------------
 
-from LipsyncFrame import LipsyncFrame
+##from LipsyncFrame import LipsyncFrame
+from gui.LipsyncFrame import LipsyncFrame
 
+#from gui.lipsync_frame_class import *
 
 
 
