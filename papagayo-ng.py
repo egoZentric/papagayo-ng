@@ -1,3 +1,4 @@
+# BEGIN CUT -------------------------------------------------------------------
 #!/usr/bin/env python
 # -*- coding: ISO-8859-1 -*-
 #
@@ -36,6 +37,7 @@
 ###   wx.PYAPP_ASSERT_SUPPRESS
 ###   wx.InitAllImageHandlers()
 # END OF REFACTOR
+# END CUT ---------------------------------------------------------------------
 
 import os
 #   os.path.abspath() - normalize and absolutize given file name.and path.
@@ -46,6 +48,7 @@ import sys
 
 
 
+# BEGIN CUT -------------------------------------------------------------------
 # ### TODO : feature request : Add international support.
 
 # UNUSED MODULE
@@ -63,6 +66,7 @@ import sys
 ##    [As far as i can tell, This is automatically inserted by wxGlade code generator
 ##    and is not used anywhere in this projecy (yet) ]\eZ
 # ### TODO : strip _() message functions - this is a job for grep x-d:-)
+# END CUT ---------------------------------------------------------------------
 
 
 from gui.lipsync_app_class import LipsyncApp
@@ -85,10 +89,12 @@ from gui.lipsync_app_class import LipsyncApp
 ##
 ### end of class LipsyncApp
 # END OF REFACTOR
+# END CUT ---------------------------------------------------------------------
 
 
 if __name__ == "__main__":
 
+# BEGIN CUT -------------------------------------------------------------------
 ##    # UNUSED module gettext ####################################################
 ##    # Setup for GNU (I18N) and (L10N)
 ##    try:
@@ -96,11 +102,12 @@ if __name__ == "__main__":
 ##    except TypeError:
 ##        gettext.install("papagayo-ng")
 ##    # END OF UNUSED BLOCK ######################################################
+# END CUT ---------------------------------------------------------------------
 
 
     # Create an instance of the application.
     ##papagayo = LipsyncApp(0)  ### TODO verify passed zero necesary ???
-    papagayo = LipsyncApp()
+    papagayo = LipsyncApp(redirect=False)
     if not papagayo:
         gracefully = "FAIL: Could not create application."
         sys.exit(gracefully)
