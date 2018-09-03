@@ -1,6 +1,12 @@
 suspects
 
 
+wx.App().wx.PyApp().SetAssertMode(self,modeflags) 
+    wxAPP_ASSERT_*
+    removed 
+    now is wxpython|wxWidget default exceptions.
+
+
 LipsyncApp()
     self reference propergation to .mainFrame.TheApp
     self reference propergation to .mainFrame.waveformView.TheApp
